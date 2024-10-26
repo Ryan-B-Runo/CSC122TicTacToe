@@ -9,8 +9,6 @@ int main()
     Board board;
     Console console(&board);
 
-    cout << console.display() << endl;
-
     assert(console.display() == "1 | 2 | 3\n-----------\n4 | 5 | 6\n-----------\n7 | 8 | 9\n");
 
     board.move(1, 'X');
