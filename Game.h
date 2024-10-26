@@ -13,10 +13,7 @@ private:
     HumanPlayer *p2;
     HumanPlayer *current;
 public:
-    Game(Console *c, GameState *gs, HumanPlayer *p1, HumanPlayer *p2);
-
     Game(Console *console, GameState *gs, HumanPlayer *p1, HumanPlayer *p2, HumanPlayer *current);
-
     void start();
 };
 

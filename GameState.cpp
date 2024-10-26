@@ -1,5 +1,5 @@
 #include "GameState.h"
-
+#include <iostream>
 GameState::GameState(Board *board) {
     this->board=board;
 
@@ -38,10 +38,11 @@ GameState::GameState(Board *board) {
 
 string GameState::currentState() {
     for(int i = 0; i < 8; i++){
-        if(this->board->getMark(this->combos[i][0]) == this->board->getMark(this->combos[i][1]) == this->board->getMark(this->combos[i][2])){
+        if(this->board->getMark(this->combos[i][0]) == this->board->getMark(this->combos[i][1]) &&  this->board->getMark(this->combos[i][0]) == this->board->getMark(this->combos[i][2])){
             string res;
-            res = std::to_string(+ this->board->getMark(this->combos[i][0]));
+            res = + this->board->getMark(this->combos[i][0]);
             res += " wins.";
+            cout << res << endl;
             return res;
         }
     }

@@ -7,10 +7,14 @@ void Game::start() {
     while(gs->currentState() == "In Progress."){
        cout << console->display() << endl;
        current->getMove();
-       if(current->mark == 'X'){
-           current = p2;
+       if(!current->skip){
+           if(current->mark == 'X'){
+               current = p2;
+           }else{
+               current = p1;
+           }
        }else{
-           current = p1;
+           current->skip = false;
        }
     }
 }

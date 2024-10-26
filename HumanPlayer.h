@@ -10,6 +10,7 @@ public:
     HumanPlayer(Board *board, char mark);
     void getMove();
     char mark;
+    bool skip;
 };
 
 #endif //CSC122TICTACTOE_HUMANPLAYER_H
