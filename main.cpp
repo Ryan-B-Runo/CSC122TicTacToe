@@ -1,8 +1,8 @@
-#include <iostream>
 #include "Board.h"
 #include "GameState.h"
 #include "Console.h"
 #include "HumanPlayer.h"
+#include "Game.h"
 
 using namespace std;
 
@@ -14,5 +14,7 @@ int main(){
     HumanPlayer p2(&b, '0');
     HumanPlayer current = p1;
     //game here
+    Game game(&c, &g, &p1, &p2, &current);
+    game.start();
     return 0;
 }
