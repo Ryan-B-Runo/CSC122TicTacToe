@@ -18,5 +18,10 @@ void HumanPlayer::getMove() {
         this->skip = true;
     }
     cout << endl;
-    this->board->move(move, this->mark);
+    if(this->board->getMark(move) != to_string(move)[0]){
+        cout << "Enter a valid input." << endl;
+        getMove();
+    }else{
+        this->board->move(move, this->mark);
+    }
 }

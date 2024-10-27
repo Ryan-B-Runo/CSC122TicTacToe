@@ -43,7 +43,12 @@ string GameState::currentState() {
             res = + this->board->getMark(this->combos[i][0]);
             res += " wins.";
             cout << res << endl;
+            this->board->clear();
             return res;
+        }
+        else if(this->board->getMark(1) != '1' && this->board->getMark(2) != '2' && this->board->getMark(3) != '3' && this->board->getMark(4) != '4' && this->board->getMark(5) != '5' && this->board->getMark(6) != '6' && this->board->getMark(7) != '7' && this->board->getMark(8) != '8' && this->board->getMark(9) != '9'){
+            cout << "Draw." << endl;
+            return "Draw.";
         }
     }
     return "In Progress.";

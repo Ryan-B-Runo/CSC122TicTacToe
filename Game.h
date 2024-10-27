@@ -15,6 +15,7 @@ private:
 public:
     Game(Console *console, GameState *gs, HumanPlayer *p1, HumanPlayer *p2, HumanPlayer *current);
     void start();
+    bool restart;
 };
 
 #endif //CSC122TICTACTOE_GAME_H

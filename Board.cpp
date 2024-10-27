@@ -3,14 +3,14 @@
 using namespace std;
 void Board::clear() {
     this->moves[0] = '1';
-    this->moves[0] = '2';
-    this->moves[0] = '3';
-    this->moves[0] = '4';
-    this->moves[0] = '5';
-    this->moves[0] = '6';
-    this->moves[0] = '7';
-    this->moves[0] = '8';
-    this->moves[0] = '9';
+    this->moves[1] = '2';
+    this->moves[2] = '3';
+    this->moves[3] = '4';
+    this->moves[4] = '5';
+    this->moves[5] = '6';
+    this->moves[6] = '7';
+    this->moves[7] = '8';
+    this->moves[8] = '9';
 }
 
 void Board::move(int i, char m) {
@@ -20,5 +20,8 @@ void Board::move(int i, char m) {
 }
 
 char Board::getMark(int i) {
-    return this->moves.at(i-1);
+    if(i > 0 && i < 10){
+        return this->moves.at(i-1);
+    }
+    return 'e';
 }

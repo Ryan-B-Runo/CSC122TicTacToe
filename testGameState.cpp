@@ -79,6 +79,17 @@
 //    b.move(5, '5');
 //    b.move(6, '6');
 //
+//    b.move(1, 'x');
+//    b.move(2,'o');
+//    b.move(3, 'x');
+//    b.move(4, 'o');
+//    b.move(5,'x');
+//    b.move(6, 'o');
+//    b.move(7, 'o');
+//    b.move(8,'x');
+//    b.move(9, 'o');
+//    assert(g.currentState() == "Draw.");
+//
 //    cout << "All tests passed." << endl;
 //
 //    return 0;
