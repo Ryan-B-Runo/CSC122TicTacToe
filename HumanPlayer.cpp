@@ -1,6 +1,9 @@
 #include <iostream>
 #include <limits>
 #include "HumanPlayer.h"
+
+using namespace std;
+
 HumanPlayer::HumanPlayer(Board *board, char mark) {
     this->board = board;
     this->mark = mark;
@@ -24,4 +27,8 @@ void HumanPlayer::getMove() {
     }else{
         this->board->move(move, this->mark);
     }
+}
+
+char HumanPlayer::getMark() {
+    return this->mark;
 }

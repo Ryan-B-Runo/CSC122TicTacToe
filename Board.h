@@ -2,7 +2,6 @@
 #define CSC122TICTACTOE_BOARD_H
 
 #include <array>
-#include <string>
 
 using namespace std;
 

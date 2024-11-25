@@ -3,6 +3,9 @@
 
 
 #include "Board.h"
+#include <string>
+
+using namespace std;
 
 class GameState {
 private:

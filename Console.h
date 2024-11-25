@@ -10,7 +10,7 @@ class Console {
 private:
     Board *board;
 public:
-    Console(Board *board);
+    explicit Console(Board *board);
     string display();
 };
 

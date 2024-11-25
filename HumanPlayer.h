@@ -2,15 +2,18 @@
 #define CSC122TICTACTOE_HUMANPLAYER_H
 
 #include "Board.h"
+#include "Player.h"
 
-class HumanPlayer {
+class HumanPlayer : public Player {
 private:
     Board *board;
+
 public:
     HumanPlayer(Board *board, char mark);
-    void getMove();
+    void getMove() override;
+    char getMark() override;
     char mark;
-    bool skip;
+    bool skip = false;
 };
 
 #endif //CSC122TICTACTOE_HUMANPLAYER_H

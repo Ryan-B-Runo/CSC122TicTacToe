@@ -9,11 +9,11 @@ class Game {
 private:
     Console *console;
     GameState *gs;
-    HumanPlayer *p1;
-    HumanPlayer *p2;
-    HumanPlayer *current;
+    Player *p1;
+    Player *p2;
+    Player *current;
 public:
-    Game(Console *console, GameState *gs, HumanPlayer *p1, HumanPlayer *p2, HumanPlayer *current);
+    Game(Console *console, GameState *gs, Player *p1, Player *p2, Player *current);
     void start();
     bool restart;
 };

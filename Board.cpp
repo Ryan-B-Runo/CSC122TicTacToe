@@ -1,5 +1,5 @@
 #include "Board.h"
-#include <iostream>
+
 using namespace std;
 void Board::clear() {
     this->moves[0] = '1';
