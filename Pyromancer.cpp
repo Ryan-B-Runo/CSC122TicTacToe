@@ -46,6 +46,3 @@ void Pyromancer::getMove() {
     }
   }
 }
-void Pyromancer::setMark(char mark) {
-  this->mark = mark;
-}

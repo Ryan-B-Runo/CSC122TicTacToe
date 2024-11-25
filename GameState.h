@@ -1,7 +1,6 @@
 #ifndef CSC122TICTACTOE_GAMESTATE_H
 #define CSC122TICTACTOE_GAMESTATE_H
 
-
 #include "Board.h"
 #include <string>
 
@@ -11,7 +10,7 @@ class GameState {
 private:
     Board *board;
     string winner;
-    int combos[8][3]{};
+    int combos[9][4];
 public:
     explicit GameState(Board *board);
     string currentState();

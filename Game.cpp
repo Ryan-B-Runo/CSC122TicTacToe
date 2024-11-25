@@ -11,7 +11,7 @@ void Game::start() {
        cout << console->display() << endl;
        current->getMove();
        if(!current->skip){
-           if(current->getMark() == 'X'){
+           if(current->getMark() == 'X' || current->getMark() == 'x'){
                current = p2;
            }else{
                current = p1;

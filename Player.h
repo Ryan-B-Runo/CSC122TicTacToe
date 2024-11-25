@@ -9,6 +9,7 @@ public:
   virtual char getMark() = 0;
   char mark;
   bool skip = false;
+  bool swarm = false;
 };
 
 #endif //PLAYER_H

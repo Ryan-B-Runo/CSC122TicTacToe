@@ -34,13 +34,18 @@ GameState::GameState(Board *board) {
     this->combos[7][0] = 3;
     this->combos[7][1] = 5;
     this->combos[7][2] = 7;
+
+    this->combos[8][0] = 1;
+    this->combos[8][1] = 3;
+    this->combos[8][2] = 7;
+    this->combos[8][3] = 9;
 }
 
 string GameState::currentState() {
     for(int i = 0; i < 8; i++){
         if(this->board->getMark(this->combos[i][0]) == this->board->getMark(this->combos[i][1]) &&  this->board->getMark(this->combos[i][0]) == this->board->getMark(this->combos[i][2])){
             string res;
-            res = + this->board->getMark(this->combos[i][0]);
+            res += this->board->getMark(this->combos[i][0]);
             res += " wins.";
             cout << res << endl;
             this->board->clear();
@@ -49,6 +54,16 @@ string GameState::currentState() {
         else if(this->board->getMark(1) != '1' && this->board->getMark(2) != '2' && this->board->getMark(3) != '3' && this->board->getMark(4) != '4' && this->board->getMark(5) != '5' && this->board->getMark(6) != '6' && this->board->getMark(7) != '7' && this->board->getMark(8) != '8' && this->board->getMark(9) != '9'){
             cout << "Draw." << endl;
             return "Draw.";
+        }
+    }
+    if (this->board->getMark(this->combos[8][0]) == this->board->getMark(this->combos[8][1]) &&  this->board->getMark(this->combos[8][0]) == this->board->getMark(this->combos[8][2]) && this->board->getMark(this->combos[8][0]) == this->board->getMark(this->combos[8][3])) {
+        if (this->board->getMark(this->combos[8][0]) == 'o' || this->board->getMark(this->combos[8][0]) == 'x') {//swarms are lowercase
+            string res;
+            res =+ this->board->getMark(this->combos[8][0]);
+            res += " wins.";
+            cout << res << endl;
+            this->board->clear();
+            return res;
         }
     }
     return "In Progress.";
