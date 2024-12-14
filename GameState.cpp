@@ -48,11 +48,19 @@ string GameState::currentState() {
             res += this->board->getMark(this->combos[i][0]);
             res += " wins.";
             cout << res << endl;
+            if (this->board->getMark(this->combos[i][0]) == 'X') {
+                this->p1Wins++;
+            }else if(this->board->getMark(this->combos[i][0]) == 'O') {
+                this->p2Wins++;
+            }
             this->board->clear();
+            this->gamesPlayed++;
             return res;
         }
         else if(this->board->getMark(1) != '1' && this->board->getMark(2) != '2' && this->board->getMark(3) != '3' && this->board->getMark(4) != '4' && this->board->getMark(5) != '5' && this->board->getMark(6) != '6' && this->board->getMark(7) != '7' && this->board->getMark(8) != '8' && this->board->getMark(9) != '9'){
             cout << "Draw." << endl;
+            this->ties++;
+            this->gamesPlayed++;
             return "Draw.";
         }
     }
@@ -62,9 +70,31 @@ string GameState::currentState() {
             res =+ this->board->getMark(this->combos[8][0]);
             res += " wins.";
             cout << res << endl;
+            if (this->board->getMark(this->combos[8][0]) == 'x') {
+                this->p1Wins++;
+            }else if(this->board->getMark(this->combos[8][0]) == 'o') {
+                this->p2Wins++;
+            }
             this->board->clear();
+            this->gamesPlayed++;
             return res;
         }
     }
     return "In Progress.";
+}
+
+int GameState::getP1Wins() {
+    return this->p1Wins;
+}
+
+int GameState::getP2Wins() {
+    return this->p2Wins;
+}
+
+int GameState::getTies() {
+    return this->ties;
+}
+
+int GameState::getGamesPlayed() {
+    return this->gamesPlayed;
 }

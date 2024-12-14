@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>;
 #include "Game.h"
 
 #include "Pyromancer.h"
@@ -65,5 +66,10 @@ void Game::start() {
     cin >> playAgain;
     if(tolower(playAgain) == 'y'){
         start();
+    }else {
+        string report = "Number of games played: " + to_string(gs->getGamesPlayed()) + "\nPlayer one won " + to_string(gs->getP1Wins()) + " times.\nPlayer two won " + to_string(gs->getP2Wins()) + " times.\nTies: " + to_string(gs->getTies());
+        ofstream reportFile("TTT_Report.txt");
+        reportFile << report;
+        reportFile.close();
     }
 }
